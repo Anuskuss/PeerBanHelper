@@ -1,5 +1,5 @@
 #!/bin/sh -e
 USER=peerbanhelper
-getent passwd peerbanhelper > /dev/null || adduser --quiet --system --group --no-create-home --disabled-password --home /etc/peerbanhelper $USER
-chown -R $USER: /etc/peerbanhelper
+getent passwd peerbanhelper > /dev/null || adduser --quiet --system --group --no-create-home --disabled-password --home /opt/peerbanhelper $USER
+chown -R $USER: /opt/peerbanhelper
 systemctl enable --now peerbanhelper.service 2> /dev/null
