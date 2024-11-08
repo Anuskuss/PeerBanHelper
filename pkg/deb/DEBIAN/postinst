@@ -1,9 +1,7 @@
 #!/bin/sh -e
 
-if [ $1 = configure ]; then
-    getent passwd peerbanhelper > /dev/null || adduser --quiet --system --group --home /var/lib/peerbanhelper peerbanhelper
-    chown -R peerbanhelper: /etc/peerbanhelper
-    chown -R root: /usr/lib/peerbanhelper
-fi
+getent passwd peerbanhelper > /dev/null || adduser --quiet --system --group --home /var/lib/peerbanhelper peerbanhelper
+chown -R peerbanhelper: /etc/peerbanhelper
+chown -R root: /usr/lib/peerbanhelper
 
 systemctl start peerbanhelper.service
