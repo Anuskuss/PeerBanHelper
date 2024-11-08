@@ -4,4 +4,5 @@ getent passwd peerbanhelper > /dev/null || adduser --quiet --system --group --ho
 chown -R peerbanhelper: /etc/peerbanhelper
 chown -R root: /usr/lib/peerbanhelper
 
+systemctl daemon-reload
 systemctl start peerbanhelper.service
