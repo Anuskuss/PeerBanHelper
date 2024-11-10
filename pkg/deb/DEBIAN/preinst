@@ -6,7 +6,7 @@ if getent passwd peerbanhelper | grep --quiet /nonexistent; then
 	adduser --quiet --system --group --home /var/lib/peerbanhelper peerbanhelper
 	chown -R peerbanhelper: /etc/peerbanhelper
 	mv /etc/peerbanhelper/config/config.yml /etc/peerbanhelper/config/profile.yml /etc/peerbanhelper
-	rmdir /etc/peerbanhelper/config
-	rm -rf /etc/peerbanhelper/data /etc/peerbanhelper/logs
+	rm -rf /etc/peerbanhelper/config /etc/peerbanhelper/data
+	mv /etc/peerbanhelper/logs /var/log/peerbanhelper
 	find /etc/peerbanhelper -mindepth 1 -maxdepth 1 -type d -exec mv {} /var/lib/peerbanhelper \;
 fi
